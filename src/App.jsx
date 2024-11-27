@@ -1,6 +1,9 @@
 import Home from "./pages/Home.jsx";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Detailed from "./pages/Detailed.jsx";
+import NftMetadata from "./pages/NftMetadata.jsx";
+import TokenBalance from "./pages/TokenBalance.jsx";
+import Transactions from "./pages/Transactions.jsx";
 import Trading from "./pages/Trading.jsx";
 import Sidebar from "./components/Sidebar";
 import { SidebarItem } from "./components/Sidebar";
@@ -21,6 +24,21 @@ function App() {
             text="Trading"
             to="/Trading"
           />
+          <SidebarItem
+            icon={<UserCircle size={20} />}
+            text="NFT Metadata"
+            to="/nft-metadata"
+          />
+          <SidebarItem
+            icon={<UserCircle size={20} />}
+            text="Transactions"
+            to="/transactions"
+          />
+          <SidebarItem
+            icon={<UserCircle size={20} />}
+            text="Token Balance"
+            to="/token-balance"
+          />
           <hr className="my-3" />
         </Sidebar>
         <Routes>
@@ -29,6 +47,9 @@ function App() {
           <Route path="/categories" element={<Home />}></Route>
           <Route path="/Trading" element={<Trading />}></Route>
           <Route path="/:id" element={<Detailed />}></Route>
+          <Route path="/nft-metadata" element={<NftMetadata />}></Route>
+          <Route path="/transactions" element={<Transactions />}></Route>
+          <Route path="/token-balance" element={<TokenBalance />}></Route>
         </Routes>
       </div>
     </Router>
