@@ -1,82 +1,25 @@
-# CryptoView
+## Web3 demo completed task
+- Exam Tasks 1, 2 & 4 are done 
+- Integrated in Frontend and made the UI for testing 
+- Manual postman collection being shared 
+- Automated postman testing and reporting
+- Own mongodb is being used, since the shared one is not working
 
-## Crypto Trading Platform
+## How to run
 
-This is a simple MERN stack application that displays current prices of cryptocurrencies and allows users to trade them.
+1. run `pnpm i` or `npm i`
+2. run `pnpm dev` or `npm start`
+  - Frontend is available at `http://localhost:5173/`
+  - Backend is available at `http://localhost:5001/` (or process.env.PORT) - 5000 has been inuse in local, changed to 5001
 
-**Features:**
+# How to run the postman test 
+- `cd postman`
+- `sh newman.test.sh`
+- please check for results in the `postman/reports` folder
+  
+## How to get contractAddress and walletAddress
+1. Visit `https://sepolia.lineascan.build/nft-transfers`
+2. Look for ERC-721 type transfers
+3. Click on transfer and then in transfer detail check ERC-721 tokens transferred section
+  - click on tokenId or token or contract or sender or receiver
 
-- **Real-time Cryptocurrency Prices:** Retrieves and displays the latest prices from a trusted cryptocurrency API.
-- **Trading Functionality:** Allows users to buy and sell cryptocurrencies.
-- **Secure Authentication:** Uses JWT authentication to protect user accounts.
-- **User Dashboard:** Displays trading history, portfolio, and other relevant information.
-
-**Getting Started:**
-
-1. **Clone the Repository:**
-
-   ```bash
-   git clone https://github.com/labs-web3/CryptoView.git
-   ```
-
-2. **Install Dependencies:**
-
-   ```bash
-   cd CryptoView
-   npm install
-   ```
-
-3. **Set up Environment Variables:**
-
-   - Create a `.env` file at the root of the project.
-   - Add the following environment variables:
-     ```
-     SECRET=cryptoviewsecret
-     MONG_URI=mongodb+srv://salceanu:f34mqJgy29B61Mm7@labsdatabase.5913czx.mongodb.net/?retryWrites=true&w=majority&appName=labsdatabase
-     PORT=5000
-     VITE_X_CG_DEMO_API_KEY=CG-1t8kdBZJMA1YUmpjF5nypF6R
-     ```
-
-4. **Start the Server:**
-
-   ```bash
-   npm start
-   ```
-
-5. **Access the Application:**
-   Open your browser and navigate to `http://localhost:5173`.
-
-**Project Structure:**
-
-```
-crypto-trading-platform/
-├── src/
-│   ├── components/
-│   ├── data/
-│   ├── hooks/
-│   ├── lib/
-│   ├── pages/
-│   ├── App.js
-│   └── index.js
-├── public/
-└── server/
-    ├── controllers/
-    ├── middleware/
-    ├── models/
-    ├── routes/
-    └── server.js
-```
-
-**Technologies Used:**
-
-- **Frontend:** React, Redux, Axios, Tailwind CSS
-- **Backend:** Node.js, Express, MongoDB, JWT
-- **API:** [Cryptocurrency API](https://example.com/api)
-
-**Contributing:**
-
-Contributions are welcome! Please create a pull request with your changes.
-
-**License:**
-
-This project is licensed under the MIT License.
