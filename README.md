@@ -23,3 +23,6 @@
 3. Click on transfer and then in transfer detail check ERC-721 tokens transferred section
   - click on tokenId or token or contract or sender or receiver
 
+## Notes 
+- tested in local 
+- recording the session on 27/Nov 4PM AEST
