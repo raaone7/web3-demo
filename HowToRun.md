@@ -3,7 +3,7 @@
 1. run `pnpm i`
 2. run `pnpm dev`
   - Frontend is available at `http://localhost:5173/`
-  - Backend is available at `http://localhost:5001/` (or process.env.PORT)
+  - Backend is available at `http://localhost:5001/` (or process.env.PORT) - 5000 has been inuse in local
 
 
 ## How to get contractAddress and walletAddress

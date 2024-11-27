@@ -1,10 +1,9 @@
 {
 	"info": {
-		"_postman_id": "1b487af0-0a1f-4576-850a-020dc42fafd6",
-		"name": "web3-skills-assessment",
+		"_postman_id": "b80504b0-2817-43ad-8917-f2b04ec17526",
+		"name": "web3-demo",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "1136453",
-		"_collection_link": "https://zeroburn.postman.co/workspace/Team-Workspace~6d5d7e4d-cb43-4cf0-8f4a-fe17f3a25652/collection/1136453-1b487af0-0a1f-4576-850a-020dc42fafd6?action=share&source=collection_link&creator=1136453"
+		"_exporter_id": "868153"
 	},
 	"item": [
 		{
@@ -13,15 +12,15 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{host}}/api/nft/metadata/{{contractAddress}}/{{tokenId}}",
+					"raw": "{{host}}/api/exam/metadata/{{nftContractAddress}}/{{tokenId}}",
 					"host": [
 						"{{host}}"
 					],
 					"path": [
 						"api",
-						"nft",
+						"exam",
 						"metadata",
-						"{{contractAddress}}",
+						"{{nftContractAddress}}",
 						"{{tokenId}}"
 					]
 				}
@@ -34,14 +33,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{host}}/api/tokens/balance/{{contractAddress}}/{{walletAddress}}",
+					"raw": "{{host}}/api/exam/token-balance/{{contractAddress}}/{{walletAddress}}",
 					"host": [
 						"{{host}}"
 					],
 					"path": [
 						"api",
-						"tokens",
-						"balance",
+						"exam",
+						"token-balance",
 						"{{contractAddress}}",
 						"{{walletAddress}}"
 					]
@@ -55,14 +54,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{host}}/api/transactions/history/{{walletAddress}}",
+					"raw": "{{host}}/api/exam/transactions/{{walletAddress}}",
 					"host": [
 						"{{host}}"
 					],
 					"path": [
 						"api",
+						"exam",
 						"transactions",
-						"history",
 						"{{walletAddress}}"
 					]
 				}
@@ -71,6 +70,16 @@
 		}
 	],
 	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
 		{
 			"listen": "test",
 			"script": {
@@ -88,12 +97,12 @@
 	"variable": [
 		{
 			"key": "host",
-			"value": "http://localhost:5000",
+			"value": "http://localhost:5001",
 			"type": "string"
 		},
 		{
 			"key": "contractAddress",
-			"value": "0x5769a9F138f3131f35ED3E2b80baD43A3D599e5e",
+			"value": "0xfC5A1334dda2c573464afE64Dc682f0535D4B20D",
 			"type": "string"
 		},
 		{
@@ -104,6 +113,11 @@
 		{
 			"key": "walletAddress",
 			"value": "0x24d8a11647f56093010649BF86c2Cc5721Faa038",
+			"type": "string"
+		},
+		{
+			"key": "nftContractAddress",
+			"value": "0x5769a9F138f3131f35ED3E2b80baD43A3D599e5e",
 			"type": "string"
 		}
 	]
