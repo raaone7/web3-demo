@@ -6,6 +6,8 @@ const workoutRoutes = require("./routes/workouts.js");
 const usersRoutes = require("./routes/users.js");
 const transactionsRoutes = require("./routes/Transactions.js");
 const userPortfolio = require("./routes/userPortfolio.js");
+const examRoutes = require("./routes/exam.js");
+
 const mongoose = require("mongoose");
 const cors = require("cors");
 
@@ -35,6 +37,8 @@ app.use("/api/portfolio/", userPortfolio);
 app.use("/api/transactions/", transactionsRoutes);
 app.use("/api/users/", usersRoutes);
 
+app.use("/api/exam/", examRoutes);
+
 //connect to db et lancement du server
 mongoose
   .connect(process.env.MONG_URI)
@@ -43,7 +47,7 @@ mongoose
     console.log(`connected to db`);
   })
   .catch((error) => {
-    // console.log(error);
+    console.log(error);
   });
 
 app.listen(process.env.PORT, () => {
