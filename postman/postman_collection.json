@@ -1,0 +1,110 @@
+{
+	"info": {
+		"_postman_id": "1b487af0-0a1f-4576-850a-020dc42fafd6",
+		"name": "web3-skills-assessment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1136453",
+		"_collection_link": "https://zeroburn.postman.co/workspace/Team-Workspace~6d5d7e4d-cb43-4cf0-8f4a-fe17f3a25652/collection/1136453-1b487af0-0a1f-4576-850a-020dc42fafd6?action=share&source=collection_link&creator=1136453"
+	},
+	"item": [
+		{
+			"name": "fetchNftMetadata",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/nft/metadata/{{contractAddress}}/{{tokenId}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"nft",
+						"metadata",
+						"{{contractAddress}}",
+						"{{tokenId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchTokenBalance",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/tokens/balance/{{contractAddress}}/{{walletAddress}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"tokens",
+						"balance",
+						"{{contractAddress}}",
+						"{{walletAddress}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchTransactionsByWalletAddress",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/transactions/history/{{walletAddress}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"transactions",
+						"history",
+						"{{walletAddress}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"pm.test(\"Status code should be 200\", () => {",
+					"    const statusCode = pm.response.code;",
+					"    pm.expect(statusCode, `Unexpected Status Code ${statusCode}`).to.be.eq(200)",
+					"})"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:5000",
+			"type": "string"
+		},
+		{
+			"key": "contractAddress",
+			"value": "0x5769a9F138f3131f35ED3E2b80baD43A3D599e5e",
+			"type": "string"
+		},
+		{
+			"key": "tokenId",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "walletAddress",
+			"value": "0x24d8a11647f56093010649BF86c2Cc5721Faa038",
+			"type": "string"
+		}
+	]
+}
